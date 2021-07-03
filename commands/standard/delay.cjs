@@ -22,7 +22,7 @@ module.exports = class Delay extends Command {
         message.delete()
         if (delay === 0) {
             await message.reply(`API delay: ${message.client.tornDelay} seconds`).then(async msg => {
-                await sleep(5000)
+                await message.client.helpers.sleep(5000)
                 await msg.delete()
             })
             return
