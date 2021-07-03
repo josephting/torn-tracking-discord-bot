@@ -20,9 +20,13 @@
 
 ### 1. `!apikey`
 
+`!apikey <apikey>`
+
 Set api key that will be used to retrieve data from Torn.
 
 ### 2. `!delay`
+
+`!delay 3`
 
 Set delay in seconds of which will be the timer before next API call will be made. Default is 3 seconds.
 
