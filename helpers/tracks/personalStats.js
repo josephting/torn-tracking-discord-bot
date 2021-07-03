@@ -43,7 +43,10 @@ export default class PersonalStats {
         let data = await getTornData('user', 'basic,personalstats,timestamp', this.apiKey, uid)
         if (!data.success) return
         let cachedData = this.client.db.data[`${this.key}${uid}`]
-        if (!cachedData) return
+        if (!cachedData) {
+            await this.cacheData(data.data)
+            return
+        }
         let trackedStats = await this.getTrackedStats(uid)
         if (!isNaN(data.data.timestamp)) {
             this.recordsAge[data.data.player_id] = data.data.timestamp
