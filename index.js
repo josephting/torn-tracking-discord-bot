@@ -4,13 +4,13 @@ dotenv.config()
 
 import discordjsCommando from 'discord.js-commando'
 const {CommandoClient} = discordjsCommando
-// const {CommandoClient} = require('discord.js-commando')
+import {dirname} from 'dirname-filename-esm'
 import path from 'path'
 import {Low, JSONFile} from 'lowdb'
 import Tracker from './helpers/tracker.js'
 import * as helpers from './helpers/index.js'
 
-const __dirname = path.dirname(new URL(import.meta.url).pathname)
+const __dirname = dirname(import.meta)
 
 const client = new CommandoClient({
     commandPrefix: '!',
